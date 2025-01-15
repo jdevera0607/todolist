@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.main-grid{
+    display: grid;
+    grid-template-areas: 
+    'aside'
+    'section'
+    'footer';
+    grid-template-columns: 3;
+    justify-content: center;
+}
+aside{
+    background-color: #082f49;
+    color: #9ca3af;
+
+    display: grid;
+    grid-template-areas: 
+    'user-container'
+    'function-btns';
+    justify-content: center;
+}
+.main-grid > aside{
+    grid-area: aside;
+}
+.main-grid > section{
+    grid-area: section;
+}
+.main-grid > footer{
+    grid-area: footer;
+}
