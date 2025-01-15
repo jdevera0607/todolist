@@ -1,22 +1,39 @@
+// classes:
+// function-container
+// user-container
 
-export function createButtons(){
-    const functionContainer = document.querySelector('.function-btns');
+export function aside(){
+    const aside = document.querySelector('aside');
 
-    const addBtn = document.createElement('BUTTON');
-    addBtn.textContent = 'Add task';
-    const projectsBtn = document.createElement('BUTTON');
-    projectsBtn.textContent = 'My Projects';
+    function createButtons(){
+        const functionContainer = document.createElement('DIV');
+        functionContainer.classList.add('function-container');
+    
+        const addBtn = document.createElement('BUTTON');
+        addBtn.textContent = 'Add task';
+        const projectsBtn = document.createElement('BUTTON');
+        projectsBtn.textContent = 'My Projects';
+    
+        functionContainer.append(addBtn,projectsBtn);
+        aside.append(functionContainer);
+        
+    }
+    function displayUser(name){
+        const userName = document.createElement('H3');
+        userName.textContent = name;
+        const userContainer = document.createElement('DIV');
+        userContainer.classList.add('user-container');
+        
+        userContainer.appendChild(userName);
+        aside.append(userContainer);
+    }
+    createButtons();
 
-    functionContainer.append(addBtn,projectsBtn);
-}
-export function displayUser(){
-    const userName = document.createElement('h3');
-    userName.textContent = 'Jade';
+    return {
+        displayUser,
+    }
+};
 
-    const userContainer = document.querySelector('.user-container');
-
-    userContainer.appendChild(userName);
-}
 
 
 

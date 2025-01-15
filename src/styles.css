@@ -2,24 +2,32 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: #1e1e1e ;
+}
 .main-grid{
     display: grid;
     grid-template-areas: 
     'aside'
     'section'
     'footer';
-    grid-template-columns: 3;
-    justify-content: center;
 }
 aside{
-    background-color: #082f49;
+    background-color: white;
     color: #9ca3af;
-
     display: grid;
     grid-template-areas: 
     'user-container'
-    'function-btns';
+    'function-container';
     justify-content: center;
+}
+section{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.form-container > h2{
+    color: #d1d5db
 }
 .main-grid > aside{
     grid-area: aside;

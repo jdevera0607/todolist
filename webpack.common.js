@@ -8,6 +8,7 @@ module.exports = {
     index: "./src/index.js",
     logic: "./src/logic.js",
     aside: "./src/aside.js",
+    user: "./src/userForm.js",
   },
   output: {
     filename: "[name].bundle.js",
