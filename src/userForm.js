@@ -1,6 +1,6 @@
 import { aside } from "./aside";
 
-export function createForm(){
+const createForm = (function(){
     let username;
     const section = document.querySelector('section');
 
@@ -34,6 +34,6 @@ export function createForm(){
         const formData = new FormData(form);
         const usersName = formData.get('name');
         username = usersName;
+        aside();
     })
-   return userName;
-};
+})();

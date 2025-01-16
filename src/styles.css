@@ -19,7 +19,8 @@ aside{
     grid-template-areas: 
     'user-container'
     'function-container';
-    justify-content: center;
+    justify-content: start;
+    align-items:center;
 }
 section{
     display: grid;
