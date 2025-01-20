@@ -1,6 +1,7 @@
 import { aside } from "./aside";
+import { createProject } from "./logic";
 
-const createForm = (function(){
+export const createForm = (function(){
     let username;
     const section = document.querySelector('section');
 
@@ -28,12 +29,13 @@ const createForm = (function(){
     formContainer.appendChild(submitBtn);
     section.appendChild(formContainer);
 
-    submitBtn.addEventListener("click", (e) => {
+    submitBtn.addEventListener('click', (e) => {
         section.innerText = '';
         e.preventDefault();
         const formData = new FormData(form);
         const usersName = formData.get('name');
         username = usersName;
         aside();
+        createProject();
     })
 })();

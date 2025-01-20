@@ -11,6 +11,7 @@ export function aside(){
     
         const addBtn = document.createElement('BUTTON');
         addBtn.textContent = 'Add task';
+        addBtn.classList.add('addBtn')
         const projectsBtn = document.createElement('BUTTON');
         projectsBtn.textContent = 'My Projects';
     
