@@ -1,8 +1,14 @@
 import { aside } from "./aside";
 import { createProject } from "./logic";
 
-export const createForm = (function(){
-    let username;
+if(!localStorage.getItem("user")){
+    console.log("No username found...")
+    createForm();
+}else{
+    console.log('Welcome back', localStorage.getItem("user"))
+    aside();
+}
+ function createForm(){
     const section = document.querySelector('section');
 
     const formContainer = document.createElement('DIV');
@@ -15,13 +21,14 @@ export const createForm = (function(){
     submitBtn.textContent = 'Submit';
 
     const form = document.createElement('FORM');
-    form.id = 'userName';
+    form.id = 'userForm';
 
     const userName = document.createElement('INPUT');
     userName.classList.add('username-Form')
     userName.type = 'text';
     userName.name = 'name';
-    userName.placeholder = 'John';
+    userName.placeholder = 'John';  
+    userName.id = 'userName';
 
     form.appendChild(userName);
     formContainer.appendChild(h2Welcome);
@@ -34,8 +41,11 @@ export const createForm = (function(){
         e.preventDefault();
         const formData = new FormData(form);
         const usersName = formData.get('name');
-        username = usersName;
+
+        let username = usersName;
+
+        localStorage.setItem("user", username);
         aside();
         createProject();
-    })
-})();
+    });
+};
