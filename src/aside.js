@@ -15,7 +15,9 @@ export function aside(){
         const projectsBtn = document.createElement('BUTTON');
         projectsBtn.textContent = 'My Projects';
     
-        functionContainer.append(addBtn,projectsBtn);
+        functionContainer.append(addBtn);
+        functionContainer.append(projectsBtn);
+
         aside.append(functionContainer);
         
     }

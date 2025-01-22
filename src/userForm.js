@@ -7,6 +7,7 @@ if(!localStorage.getItem("user")){
 }else{
     console.log('Welcome back', localStorage.getItem("user"))
     aside();
+    createProject();
 }
  function createForm(){
     const section = document.querySelector('section');

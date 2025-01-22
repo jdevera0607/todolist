@@ -1,17 +1,30 @@
 
 export function createProject(){
-    const addProject = document.querySelector('.addBtn')
-    addProject.addEventListener('click', () => {
-        newProject();
+    const section = document.querySelector('section');
+    const modal = document.createElement('DIALOG');
+    const close = document.createElement('BUTTON');
+
+    close.textContent = 'Close';
+    modal.append(close);
+
+    close.addEventListener('click', () => {
+        modal.close();
     });
 
-    function newProject(){
+    const addProject = document.querySelector('.addBtn')
+    addProject.addEventListener('click', () => {
+        section.appendChild(modal);
+        modal.showModal();
+        newProject();
+    });
+    const newProject = () => {
         const projectContainer = document.createElement('DIV');
         projectContainer.classList.add('projectContainer');
+        modal.append(projectContainer);
         
         const projectForm = document.createElement('FORM');
         projectForm.classList.add('project-Form');
-        projectForm.id = 'projectTodo';
+        projectContainer.append(projectForm);
 
         const projectTitle = document.createElement('INPUT');
         projectTitle.classList.add = 'project-Text';
@@ -23,10 +36,11 @@ export function createProject(){
         projectText.type = 'text';
         projectText.placeholder = 'Today, I will do...'
 
-        projectForm.append(projectTitle);
-        projectForm.append(projectText);
-
-
-        document.body.append(projectForm)
+        projectForm.appendChild(projectTitle);
+        projectForm.appendChild(projectText);
+    };
+    
+    function delCurrent(){
+      
     };
 };
