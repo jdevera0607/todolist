@@ -1,13 +1,13 @@
 import { aside } from "./aside";
-import { createProject } from "./logic";
+import { dashboard } from "./logic";
 
 if(!localStorage.getItem("user")){
     console.log("No username found...")
     createForm();
 }else{
     console.log('Welcome back', localStorage.getItem("user"))
-    aside();
-    createProject();
+    const asideFunc = aside();
+    dashboard();
 }
  function createForm(){
     const section = document.querySelector('section');
@@ -46,7 +46,8 @@ if(!localStorage.getItem("user")){
         let username = usersName;
 
         localStorage.setItem("user", username);
-        aside();
-        createProject();
+        const asideFunc = aside();
+        asideFunc.displayUser(username);
+        dashboard();
     });
 };

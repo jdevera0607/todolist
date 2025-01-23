@@ -5,6 +5,16 @@
 export function aside(){
     const aside = document.querySelector('aside');
 
+    const displayUser = (name) =>{
+        const userName = document.createElement('P');
+        userName.textContent = `Welcome ${name}!`;
+        const userContainer = document.createElement('DIV');
+        userContainer.classList.add('user-container');
+
+        userContainer.appendChild(userName);
+        aside.append(userContainer);
+    }
+
     function createButtons(){
         const functionContainer = document.createElement('DIV');
         functionContainer.classList.add('function-container');
@@ -19,20 +29,10 @@ export function aside(){
         functionContainer.append(projectsBtn);
 
         aside.append(functionContainer);
-        
     }
-    function displayUser(name){
-        const userName = document.createElement('H3');
-        userName.textContent = name;
-        const userContainer = document.createElement('DIV');
-        userContainer.classList.add('user-container');
-        
-        userContainer.appendChild(userName);
-        aside.append(userContainer);
-    }
+    
     createButtons();
-
-    return {
+    return{
         displayUser,
     }
 };
