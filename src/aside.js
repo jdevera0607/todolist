@@ -1,7 +1,6 @@
 // classes:
 // function-container
 // user-container
-
 export function aside(){
     const aside = document.querySelector('aside');
 
@@ -30,7 +29,6 @@ export function aside(){
 
         aside.append(functionContainer);
     }
-    
     createButtons();
     return{
         displayUser,

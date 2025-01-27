@@ -3,13 +3,14 @@ import { dashboard } from "./logic";
 
 if(!localStorage.getItem("user")){
     console.log("No username found...")
-    createForm();
+    const newUser = createForm();
 }else{
-    console.log('Welcome back', localStorage.getItem("user"))
+    console.log('Welcome', localStorage.getItem("user"))
     const asideFunc = aside();
     dashboard();
 }
- function createForm(){
+
+export function createForm(){
     const section = document.querySelector('section');
 
     const formContainer = document.createElement('DIV');
@@ -44,8 +45,8 @@ if(!localStorage.getItem("user")){
         const usersName = formData.get('name');
 
         let username = usersName;
-
         localStorage.setItem("user", username);
+        
         const asideFunc = aside();
         asideFunc.displayUser(username);
         dashboard();
