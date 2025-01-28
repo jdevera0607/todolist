@@ -9,6 +9,7 @@ module.exports = {
     logic: "./src/logic.js",
     aside: "./src/aside.js",
     user: "./src/userForm.js",
+    display: "./src/displayProject.js",
   },
   output: {
     filename: "[name].bundle.js",

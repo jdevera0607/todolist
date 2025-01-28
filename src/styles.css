@@ -11,21 +11,7 @@ body{
     'aside'
     'section'
     'footer';
-}
-aside{
-    background-color: white;
-    color: #9ca3af;
-    display: grid;
-    grid-template-areas: 
-    'user-container'
-    'function-container';
-    justify-content: start;
-    align-items:center;
-}
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
 }
 .form-container > h2{
     color: #d1d5db
@@ -39,3 +25,30 @@ section{
 .main-grid > footer{
     grid-area: footer;
 }
+aside{
+    background-color: white;
+    color: #9ca3af;
+    display: grid;
+    grid-template-areas: 
+    'user-container'
+    'function-container';
+    justify-content: start;
+    align-items:center;
+}
+section{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.project-container{
+    display:grid;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+

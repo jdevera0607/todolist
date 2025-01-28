@@ -1,18 +1,29 @@
+//IDs:
+//project-form
+
+//classes:
+//project-Tite
+//project-Text
+//project-Container
+//display-Title
+//display-text
+
+import { project } from "./displayProject";
 
 export function dashboard(){
     const section = document.querySelector('section');
     const modal = document.createElement('DIALOG');
     const close = document.createElement('BUTTON');
+    const addProject = document.querySelector('.addBtn')
 
     close.textContent = 'Close';
     modal.append(close);
 
     close.addEventListener('click', () => {
         modal.close();
-        delCurrent();
+        delForm();
     });
 
-    const addProject = document.querySelector('.addBtn')
     addProject.addEventListener('click', () => {
         section.appendChild(modal);
         modal.showModal();
@@ -27,7 +38,7 @@ export function dashboard(){
         projectForm.id = 'project-Form';
 
         const projectTitle = document.createElement('INPUT');
-        projectTitle.classList.add = 'project-Text';
+        projectTitle.classList.add = 'project-Title';
         projectTitle.type = 'text';
         projectTitle.name = 'title';
         projectTitle.placeholder = 'Project Title';
@@ -41,8 +52,6 @@ export function dashboard(){
         projectForm.appendChild(projectTitle);
         projectForm.appendChild(projectText);
         projectForm.appendChild(submitProject);
-  
-
         modal.appendChild(projectForm);
        
         submitProject.addEventListener('click', (e) => {
@@ -57,29 +66,17 @@ export function dashboard(){
             
             project(newtitle, newText);
             modal.close();
+            delForm();
         });
     };
+    //This function was created to remove the previous form data if the form was not successfully processed.
+    //I.E closing or submitting an empty form. - WIP to require form to be FILLED!
 
-    function delCurrent(){
+    function delForm(){
         const projectform = document.querySelector('#project-Form');
 
         if(projectform.firstChild){
             projectform.remove(projectform.firstChild);
         }
-    };
-
-    function project(title, text){
-        const projectDiv = document.createElement('DIV');
-
-        const displayTitle = document.createElement('H2');
-        displayTitle.textContent = title;
-
-        const displayText = document.createElement('P');
-        displayText.textContent = text;
-
-        projectDiv.appendChild(displayTitle);
-        projectDiv.appendChild(displayText);
-
-        document.body.appendChild(projectDiv);
     };
 };
